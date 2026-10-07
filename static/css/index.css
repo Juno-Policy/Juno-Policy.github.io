@@ -346,15 +346,19 @@ body {
   .metric-grid { gap: 10px; }
 }
 
-/* Keep the paper modules distinct; reserve the blue field for the video section. */
+/* Keep the paper modules distinct with whitespace; reserve the blue field for videos. */
 body { background: #fff; }
-main > section { margin-top: 18px; border-top: 1px solid var(--ref-border); }
-main > section:first-child { margin-top: 0; border-top: 0; }
+main > section { margin-top: 18px; border-top: 0; }
+main > section:first-child { margin-top: 0; }
 .hero-section { background: #fbfaf8; }
 .abstract-section, .overview-section, .pipeline-section, .results-section, .citation-section { background: #fff; }
-.videos-section { background: #eaf4fb; border-top-color: #d4e5f0; border-bottom: 1px solid #d4e5f0; }
-.videos-section .ttt-header { border-top-color: #cddfe9; }
+.videos-section { background: #eaf4fb; border-top: 0; border-bottom: 0; }
+.videos-section .ttt-header { border-top: 0; }
+.stage-grid { border-top: 0; }
+.stage-card + .stage-card { border-left: 0; }
+.site-footer { border-top: 0; }
 
 @media (max-width: 760px) {
   main > section { margin-top: 12px; }
+  .stage-card, .stage-card + .stage-card { border-bottom: 0; }
 }

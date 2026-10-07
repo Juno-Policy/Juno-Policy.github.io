@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=module-backgrounds">
+  <link rel="stylesheet" href="static/css/index.css?v=no-dividers">
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
@@ -68,8 +68,7 @@
         <div class="abstract-grid">
           <p class="abstract-lead">Predictive latents are only useful when they stay tied to the control problem.</p>
           <div class="abstract-copy">
-            <p>Juno is a unified framework built around one action-conditioned JEPA that serves as a control-aligned representation backbone, a predictive teacher, and an adaptable dynamics model.</p>
-            <p>During <strong>pretraining</strong>, a dynamic CLS loss transfers motion-weighted patch dynamics to a compact global state. During <strong>policy learning</strong>, JEPA patches enrich perception while a decoupled reasoning branch distills future latents for action generation. During <strong>deployment</strong>, the world model adapts on every observed transition, including failures, before the policy is re-aligned on verified executions.</p>
+          <p>Juno is a unified framework built around one action-conditioned JEPA that serves as a control-aligned representation backbone, a predictive teacher, and an adaptable dynamics model. During <strong>pretraining</strong>, a dynamic CLS loss transfers motion-weighted patch dynamics to a compact global state. During <strong>policy learning</strong>, JEPA patches enrich perception while a decoupled reasoning branch distills future latents for action generation. During <strong>deployment</strong>, the world model adapts on every observed transition, including failures, before the policy is re-aligned on verified executions.</p>
           </div>
         </div>
         <div class="abstract-tags"><span>Control-aligned pretraining</span><span>Decoupled predictive reasoning</span><span>Dynamics-first test-time adaptation</span></div>
