@@ -319,6 +319,7 @@ body {
 .bibtex-card pre { border-top-color: var(--ref-border); color: var(--ref-text); background: #fff; }
 .site-footer { background: transparent; border-top: 1px solid var(--ref-border); color: var(--ref-muted); }
 .footer-inner strong { color: var(--ref-text); }
+.citation-pending > p { margin: 0; padding: 28px; color: var(--ref-muted); font-size: 19px; line-height: 1.7; }
 
 @media (max-width: 760px) {
   body { width: 100%; margin: 0; }
