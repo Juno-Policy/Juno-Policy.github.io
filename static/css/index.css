@@ -229,7 +229,9 @@ body {
 .hero-copy { max-width: 100%; margin: 0 auto; text-align: center; }
 .eyebrow, .hero-proof { display: none; }
 .hero-copy h1 { margin: 0; color: #3a3a3a; font-family: "Playfair Display", Georgia, serif; font-size: clamp(42px, 4.2vw, 58px); font-weight: 600; line-height: 1.18; letter-spacing: -.025em; }
-.juno-word { display: block; margin: 0; color: #363636; font-family: "Playfair Display", Georgia, serif; font-size: 1em; font-style: normal; font-weight: 600; line-height: 1.18; letter-spacing: -.025em; }
+.juno-lockup { display: inline-flex; align-items: center; justify-content: center; gap: .1em; margin: 0 0 8px; vertical-align: middle; }
+.juno-title-logo { display: block; width: 1.15em; height: 1.15em; object-fit: contain; }
+.juno-word { display: inline; margin: 0; color: #d33f11; font-family: "Playfair Display", Georgia, serif; font-size: 1em; font-style: normal; font-weight: 600; line-height: 1.18; letter-spacing: -.025em; }
 .title-rest { display: block; margin-top: 8px; color: #3f3f3f; font-family: "Playfair Display", Georgia, serif; font-size: clamp(27px, 3vw, 38px); font-weight: 500; line-height: 1.28; letter-spacing: -.025em; }
 .authors { justify-content: center; gap: 2px 7px; margin: 24px auto 6px; color: var(--ref-blue); font-family: "Inter", sans-serif; font-size: 17px; font-weight: 500; }
 .authors a { color: var(--ref-blue); border: 0; text-decoration: none; }
