@@ -356,8 +356,13 @@ main > section:first-child { margin-top: 0; }
 .stage-grid { border-top: 0; }
 .stage-card + .stage-card { border-left: 0; }
 .site-footer { border-top: 0; }
+.citation-section .container { display: block; width: min(1180px, calc(100% - 48px)); max-width: none; }
+.citation-section .bibtex-card { display: block; width: 100%; max-width: none; }
+.citation-section .bibtex-card pre,
+.citation-section .bibtex-card code { white-space: pre-wrap; overflow-wrap: anywhere; }
 
 @media (max-width: 760px) {
   main > section { margin-top: 12px; }
   .stage-card, .stage-card + .stage-card { border-bottom: 0; }
+  .citation-section .container { width: min(100% - 32px, 1180px); }
 }
