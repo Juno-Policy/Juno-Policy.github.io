@@ -149,7 +149,7 @@ a { color: inherit; }
 .bibtex-top { display: flex; justify-content: space-between; align-items: center; padding: 14px 17px; color: #d1dedf; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .copy-button { padding: 5px 9px; border: 1px solid rgba(255,255,255,.24); border-radius: 5px; background: transparent; color: #d1dedf; cursor: pointer; font: inherit; font-size: 10px; letter-spacing: .04em; text-transform: none; }
 .copy-button:hover { border-color: #fff; color: #fff; }
-.bibtex-card pre { margin: 0; padding: 19px; border-top: 1px solid rgba(255,255,255,.1); overflow: auto; color: #eac7b3; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; line-height: 1.65; }
+.bibtex-card pre { margin: 0; padding: 19px; border-top: 1px solid rgba(255,255,255,.1); overflow: visible; white-space: pre-wrap; overflow-wrap: anywhere; color: #eac7b3; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; line-height: 1.65; }
 .site-footer { background: #0d1e29; color: #8fa2a8; font-size: 12px; }
 .footer-inner { min-height: 74px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
 .footer-inner strong { color: #f0ddd2; font-family: "Source Serif 4", serif; font-size: 16px; font-style: italic; }
@@ -310,10 +310,9 @@ body {
 .ttt-header h3 { margin: 7px 0 5px; color: var(--ref-text); font-family: "Playfair Display", Georgia, serif; font-size: 24px; }
 .ttt-header p { color: var(--ref-muted); font-size: 18px; }
 
-.citation-grid { gap: 52px; }
-.citation-grid h2 { text-align: left; }
-.citation-grid p { color: var(--ref-muted); font-size: 19px; line-height: 1.7; }
-.bibtex-card { border: 1px solid var(--ref-border); border-radius: 8px; background: #fff; box-shadow: none; }
+.citation-section .citation-grid { display: block; width: 100%; max-width: none; }
+.bibtex-card { width: 100%; border: 1px solid var(--ref-border); border-radius: 8px; background: #fff; box-shadow: none; }
+.bibtex-card pre, .bibtex-card code { white-space: pre-wrap; overflow-wrap: anywhere; }
 .bibtex-top { color: var(--ref-muted); }
 .copy-button { border-color: var(--ref-border); color: var(--ref-muted); }
 .bibtex-card pre { border-top-color: var(--ref-border); color: var(--ref-text); background: #fff; }
