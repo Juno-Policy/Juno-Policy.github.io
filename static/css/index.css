@@ -141,7 +141,7 @@ a { color: inherit; }
 .ttt-header h3 { margin: 7px 0 5px; color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 27px; letter-spacing: -.04em; }
 .ttt-header p { margin: 0; color: #aebdc2; font-size: 14px; }
 .citation-section { background: var(--cream); }
-.citation-grid { display: grid; grid-template-columns: .83fr 1.17fr; gap: 78px; align-items: center; }
+.citation-grid { display: grid; grid-template-columns: 1fr; gap: 78px; align-items: center; }
 .citation-grid h2 { font-size: clamp(33px, 4vw, 52px); }
 .citation-grid p { max-width: 450px; margin: 17px 0 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
 .citation-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
