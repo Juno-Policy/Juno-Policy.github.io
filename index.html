@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=teaser-video">
+  <link rel="stylesheet" href="static/css/index.css?v=intro-video">
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
@@ -58,6 +58,20 @@
         </div>
       </div>
       <div class="scroll-cue" aria-hidden="true"><span></span> Scroll to explore</div>
+    </section>
+
+    <section class="intro-video-section section-pad" id="intro-video">
+      <div class="container narrow-container">
+        <div class="intro-video-frame">
+          <video class="intro-video-media" id="intro-video-en" src="static/videos/juno/juno_intro_en.mp4" poster="static/images/juno/juno_intro_en_poster.jpg" controls preload="metadata" title="Juno introduction video (English)"></video>
+          <video class="intro-video-media" id="intro-video-zh" src="static/videos/juno/juno_intro_zh.mp4" poster="static/images/juno/juno_intro_zh_poster.jpg" controls preload="metadata" title="Juno introduction video (Chinese)" hidden></video>
+        </div>
+        <div class="intro-video-toggle" role="group" aria-label="Video language">
+          <button type="button" class="intro-lang-btn active" data-lang="en" aria-pressed="true">English</button>
+          <button type="button" class="intro-lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <div class="intro-video-playlist"><a href="https://www.youtube.com/playlist?list=PLK3tHh7DCp6I" target="_blank" rel="noreferrer"><span class="playlist-icon">▶</span> Full playlist on YouTube</a></div>
+      </div>
     </section>
 
     <section class="abstract-section section-pad" id="abstract">
@@ -151,6 +165,6 @@
   <footer class="site-footer" id="authors">
     <div class="container footer-inner"><span><strong>Juno</strong> · Taming Predictive Latents for Vision-Language-Action Models</span></div>
   </footer>
-  <script src="static/js/index.js?v=teaser-video"></script>
+  <script src="static/js/index.js?v=intro-video"></script>
 </body>
 </html>
