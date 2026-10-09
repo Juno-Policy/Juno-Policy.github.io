@@ -23,4 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
       window.setTimeout(() => nav && nav.classList.remove("nav-tapped"), 450);
     });
   });
+
+  // Some browsers defer muted autoplay until the media is ready. Retry once
+  // after metadata has loaded while keeping the video free of native controls.
+  document.querySelectorAll("video[autoplay]").forEach((video) => {
+    const startVideo = () => {
+      video.muted = true;
+      const playRequest = video.play();
+      if (playRequest && typeof playRequest.catch === "function") {
+        playRequest.catch(() => {});
+      }
+    };
+    startVideo();
+    video.addEventListener("canplay", startVideo, { once: true });
+    window.setTimeout(startVideo, 250);
+  });
 });

@@ -85,7 +85,8 @@ a { color: inherit; }
 .section-heading > p { max-width: 370px; margin: 0 0 3px; color: var(--muted); font-size: 15px; line-height: 1.55; }
 .figure-frame { padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: var(--shadow-soft); }
 .overview-figure { max-width: 1070px; margin: 0 auto; }
-.overview-figure img, .pipeline-card img, .result-figure img { display: block; width: 100%; height: auto; }
+.overview-figure img, .overview-figure video, .pipeline-card img, .result-figure img { display: block; width: 100%; height: auto; }
+.overview-figure video { aspect-ratio: 16 / 9; border-radius: 8px; background: #101820; object-fit: cover; }
 .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1070px; margin: 29px auto 0; border-top: 1px solid var(--line); }
 .stage-card { position: relative; min-height: 238px; padding: 27px 25px 39px 0; border-radius: 0; border-bottom: 1px solid var(--line); overflow: visible; background: transparent !important; color: var(--ink) !important; }
 .stage-card + .stage-card { padding-left: 25px; border-left: 1px solid var(--line); }
@@ -113,15 +114,15 @@ a { color: inherit; }
 .metric-delta { margin-top: auto; color: var(--teal); font-size: 11px; font-weight: 700; }
 .results-split { display: grid; grid-template-columns: .93fr 1.07fr; gap: 33px; align-items: center; }
 .result-table-wrap { overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); }
-.result-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.result-table caption { padding: 16px 18px 12px; color: var(--ink); font-size: 12px; font-weight: 700; text-align: left; }
+.result-table { width: 100%; border-collapse: collapse; font-size: 17px; }
+.result-table caption { padding: 16px 18px 12px; color: var(--ink); font-size: 16px; font-weight: 700; text-align: left; }
 .result-table th, .result-table td { padding: 12px 17px; border-top: 1px solid var(--line); text-align: left; }
-.result-table th { color: var(--muted); font-size: 11px; font-weight: 700; }
+.result-table th { color: var(--muted); font-size: 15px; font-weight: 700; }
 .result-table td { color: var(--muted); }
 .result-table td.winner { color: var(--teal); font-weight: 700; }
-.result-figure { margin: 0; padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); }
+.result-figure { margin: 0; padding: 8px; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); }
 .result-figure img { border-radius: 9px; }
-.result-figure figcaption { margin: 10px 2px 0; color: var(--muted); font-size: 11px; }
+.result-figure figcaption { margin: 8px 2px 2px; color: var(--muted); font-size: 16px; }
 .videos-section { background: var(--navy); color: #fff; }
 .videos-section .section-kicker { color: #e68e69; }
 .videos-section .section-heading h2 { color: #fff; }
@@ -199,7 +200,7 @@ a { color: inherit; }
   .hero-actions .button { min-height: 40px; padding: 0 13px; font-size: 12px; }
   .metric-grid { grid-template-columns: 1fr 1fr; }
   .metric-label { font-size: 11px; }
-  .result-table th, .result-table td { padding: 10px 11px; font-size: 11px; }
+  .result-table th, .result-table td { padding: 10px 11px; font-size: 15px; }
 }
 
 /* Academic project-page treatment, inspired by the VLA-JEPA reference. */
@@ -281,7 +282,7 @@ body {
 .metric-grid { gap: 18px; margin-bottom: 32px; }
 .metric-card { min-height: 142px; padding: 14px 8px; border: 0; border-top: 2px solid var(--ref-border); border-radius: 0; background: transparent; text-align: center; box-shadow: none; }
 .metric-card-highlight { border-top-color: var(--ref-coral); background: transparent; }
-.metric-value, .metric-card-highlight .metric-value { color: var(--ref-purple); font-family: "Playfair Display", Georgia, serif; font-size: 41px; font-weight: 600; letter-spacing: -.04em; }
+.metric-value, .metric-card-highlight .metric-value { color: #6b4423; font-family: "Noto Sans", sans-serif; font-size: 41px; font-weight: 600; letter-spacing: -.02em; }
 .metric-label { color: var(--ref-muted); font-size: 16px; }
 .metric-label b { color: var(--ref-text); }
 .metric-delta { color: var(--ref-coral); font-size: 11px; }

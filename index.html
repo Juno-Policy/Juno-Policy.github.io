@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=citation-fullrow">
+  <link rel="stylesheet" href="static/css/index.css?v=teaser-video">
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
@@ -51,7 +51,7 @@
         <div class="hero-media-wrap">
           <div class="hero-media-card">
             <div class="media-label"><span class="live-dot"></span> Real-robot rollout <span>1.5× speed</span></div>
-            <img class="hero-video" src="static/videos/juno/juno_pt_success.gif" alt="Juno real-robot rollout putting a red cube into a blue bowl">
+            <img class="hero-video" src="static/videos/juno/juno_pt_success.gif" alt="Juno real-robot rollout under cumulative deployment shifts">
             <div class="media-caption"><span>AgileX Cobot Magic · nominal scene</span><span class="caption-accent">Juno</span></div>
           </div>
           <div class="hero-side-note"><strong>70–75%</strong><span>success under<br>real-world shifts</span></div>
@@ -79,7 +79,7 @@
           <div><div class="section-kicker">The idea</div><h2>One JEPA, three jobs.</h2></div>
           <p>Juno follows a single predictive representation from learning the world to acting in it.</p>
         </div>
-        <div class="overview-figure figure-frame"><img src="static/images/juno/teaser.png" alt="Juno overview: feature pretraining, performance gains, real-world evaluation, and test-time adaptation" loading="lazy"></div>
+        <div class="overview-figure figure-frame"><video class="overview-video" autoplay muted loop playsinline preload="metadata" aria-label="Juno overview video: feature pretraining, policy learning, and test-time adaptation"><source src="static/videos/juno/teaser.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
         <div class="stage-grid">
           <article class="stage-card stage-card-orange"><span class="stage-number">01</span><h3>Control-aligned<br>pretraining</h3><p>Match the JEPA to embodiment-specific motion, then make the global state respond to local interaction.</p><span class="stage-arrow">↘</span></article>
           <article class="stage-card stage-card-blue"><span class="stage-number">02</span><h3>Decoupled<br>reasoning</h3><p>Fuse current-frame patches and distill future latent states in a branch that still drives actions.</p><span class="stage-arrow">↘</span></article>
@@ -100,10 +100,10 @@
       <div class="container">
         <div class="section-heading"><div><div class="section-kicker">Evidence</div><h2>Robustness shows up in the numbers.</h2></div><p>Reported paper results across simulation, real-robot transfer, and deployment adaptation.</p></div>
         <div class="metric-grid">
-          <div class="metric-card"><span class="metric-value">68.5<span>%</span></span><span class="metric-label">SimplerEnv average success<br><b>Juno</b> · frozen policy</span><span class="metric-delta">+7.6 pts vs Qwen3GR00T</span></div>
-          <div class="metric-card metric-card-highlight"><span class="metric-value">72.7<span>%</span></span><span class="metric-label">SimplerEnv average success<br><b>Juno-TTT</b> · after adaptation</span><span class="metric-delta">+11.8 pts vs Qwen3GR00T</span></div>
-          <div class="metric-card"><span class="metric-value">59.6<span>%</span></span><span class="metric-label">RoboCasa-GR1 average<br><b>24 tabletop tasks</b></span><span class="metric-delta">21 of 24 tasks improved</span></div>
-          <div class="metric-card"><span class="metric-value">70–75<span>%</span></span><span class="metric-label">Real-robot success under<br><b>background, height, object shifts</b></span><span class="metric-delta">baseline: 0%</span></div>
+          <div class="metric-card"><span class="metric-value">68.5<span>%</span></span><span class="metric-label">SimplerEnv average success<br><b>Juno</b> · frozen policy</span></div>
+          <div class="metric-card metric-card-highlight"><span class="metric-value">72.7<span>%</span></span><span class="metric-label">SimplerEnv average success<br><b>Juno-TTT</b> · after adaptation</span></div>
+          <div class="metric-card"><span class="metric-value">59.6<span>%</span></span><span class="metric-label">RoboCasa-GR1 average<br><b>24 tabletop tasks</b></span></div>
+          <div class="metric-card"><span class="metric-value">70–75<span>%</span></span><span class="metric-label">Real-robot success under<br><b>background, height, object shifts</b></span></div>
         </div>
         <div class="results-split">
           <div class="result-table-wrap">
@@ -116,14 +116,12 @@
 
     <section class="videos-section section-pad" id="videos">
       <div class="container">
-        <div class="section-heading videos-heading"><div><div class="section-kicker">Real-robot rollouts</div><h2>See the policy meet the shift.</h2></div><p>All embedded rollouts are accelerated to 1.5×, kept at their native 16:9 framing, and shown as looping GIFs.</p></div>
-        <div class="video-grid video-grid-main">
-          <article class="video-card video-card-large"><div class="video-frame"><img src="static/videos/juno/juno_pt_success.gif" alt="Nominal scene: put the red cube into the blue bowl"><span class="video-badge badge-success">Juno · success</span></div><div class="video-meta"><h3>Nominal scene</h3><p>Put the red cube into the blue bowl.</p></div></article>
-          <article class="video-card video-card-large"><div class="video-frame"><img src="static/videos/juno/juno_baseline_fail.gif" alt="Qwen3GR00T failure example from the real-robot evaluation"><span class="video-badge badge-fail">Baseline · fail</span></div><div class="video-meta"><h3>Qwen3GR00T failure example</h3><p>A representative failure from the real-robot evaluation.</p></div></article>
-        </div>
+        <div class="section-heading videos-heading"><div><div class="section-kicker">Real-robot rollouts</div><h2>See the policy meet the shift.</h2></div><p>Frozen-policy rollouts over one in-domain and three cumulative out-of-distribution conditions, accelerated to 1.5× and shown as looping GIFs.</p></div>
         <div class="video-grid">
-          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_background_shift.gif" alt="Background shift rollout with a new tablecloth, cube, and bowl"><span class="video-badge badge-success">75% success</span></div><div class="video-meta"><h3>Background shift</h3><p>New tablecloth, cube, and bowl appearance.</p></div></article>
-          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_height_shift.gif" alt="Height and object shift rollout on a raised work plane"><span class="video-badge badge-success">70% success</span></div><div class="video-meta"><h3>Height + object shift</h3><p>Raised work plane and a new target object.</p></div></article>
+          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_indomain.gif" alt="Juno in-domain rollout: put the red cube into the blue bowl"><span class="video-badge badge-success">Juno · 100%</span></div><div class="video-meta"><h3>In-domain</h3><p>&ldquo;Put the red cube into the blue bowl.&rdquo; Held-out cube positions, nominal appearance.</p></div></article>
+          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_background_shift.gif" alt="Juno rollout under background shift with a new tablecloth, cube color, and bowl"><span class="video-badge badge-success">Juno · 75%</span></div><div class="video-meta"><h3>+ Background shift</h3><p>&ldquo;Put the purple cube into the green bowl.&rdquo; New tablecloth, cube color, and bowl.</p></div></article>
+          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_height_shift.gif" alt="Juno rollout under height shift on a work plane raised by 10 cm"><span class="video-badge badge-success">Juno · 70%</span></div><div class="video-meta"><h3>+ Height shift</h3><p>&ldquo;Put the purple cube into the green bowl.&rdquo; Work plane additionally raised by 10&nbsp;cm.</p></div></article>
+          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_pt_success.gif" alt="Juno rollout under object shift: put the grape into the green bowl"><span class="video-badge badge-success">Juno · 70%</span></div><div class="video-meta"><h3>+ Object shift</h3><p>&ldquo;Put the grape into the green bowl.&rdquo; A grape replaces the cube; instruction updated.</p></div></article>
         </div>
         <div class="ttt-header"><span class="section-kicker">Juno-TTT</span><h3>Adaptation recovers control under harder observations.</h3><p>World-model adaptation uses every transition; policy re-alignment uses verified executions only.</p></div>
         <div class="video-grid">
@@ -153,6 +151,6 @@
   <footer class="site-footer" id="authors">
     <div class="container footer-inner"><span><strong>Juno</strong> · Taming Predictive Latents for Vision-Language-Action Models</span></div>
   </footer>
-  <script src="static/js/index.js"></script>
+  <script src="static/js/index.js?v=teaser-video"></script>
 </body>
 </html>
