@@ -125,12 +125,7 @@ a { color: inherit; }
 .result-figure figcaption { margin: 8px 2px 2px; color: var(--muted); font-size: 16px; }
 .intro-video-section { background: #fff; }
 .intro-video-frame { overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: #000; box-shadow: var(--shadow-soft); }
-.intro-video-media { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
-.intro-video-media[hidden] { display: none; }
-.intro-video-toggle { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
-.intro-lang-btn { min-width: 96px; padding: 9px 20px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--muted); font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease; }
-.intro-lang-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
-.intro-lang-btn:not(.active):hover { color: var(--orange-deep); border-color: #d8c9bb; }
+.intro-video-media { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border: 0; }
 .intro-video-playlist { margin-top: 12px; text-align: center; }
 .intro-video-playlist a { color: var(--muted); font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 500; text-decoration: none; transition: color .2s ease; }
 .intro-video-playlist a:hover { color: var(--orange-deep); }
@@ -310,9 +305,6 @@ body {
 
 .intro-video-section { background: transparent; }
 .intro-video-frame { border: 0; border-radius: 12px; box-shadow: 0 4px 20px rgba(35, 55, 80, .08); }
-.intro-lang-btn { border: 0; background: #fff; color: var(--ref-muted); font-family: "Inter", sans-serif; font-size: 14px; font-weight: 500; box-shadow: 0 2px 10px rgba(35, 55, 80, .07); }
-.intro-lang-btn.active { background: #2f3b4f; border-color: transparent; color: #fff; }
-.intro-lang-btn:not(.active):hover { color: var(--ref-text); }
 .videos-section .section-heading h2 { color: var(--title-accent); }
 .videos-section .section-heading > p { color: var(--ref-muted); }
 .video-grid, .video-grid-main { gap: 18px; }
@@ -384,3 +376,5 @@ main > section:first-child { margin-top: 0; }
   .stage-card, .stage-card + .stage-card { border-bottom: 0; }
   .citation-section .container { width: min(100% - 32px, 1180px); }
 }
+
+.intro-video-section .narrow-container { width: min(960px, calc(100% - 32px)); margin-inline: auto; }
