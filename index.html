@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=intro-20261019">
+  <link rel="stylesheet" href="static/css/index.css?v=design-20261021">
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
@@ -38,7 +38,7 @@
       <div class="container hero-container">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-dot"></span> Vision-Language-Action Models</p>
-          <h1><span class="juno-lockup"><img class="juno-title-logo" src="static/images/juno/juno_icon.png" alt="" aria-hidden="true"><span class="juno-word">Juno</span></span><span class="title-rest">Taming Predictive Latents<br>for Vision-Language-Action Models</span></h1>
+          <h1><span class="juno-lockup"><img class="juno-title-logo" src="static/images/juno/juno_icon.png" alt="" aria-hidden="true"><img class="juno-word juno-wordmark" src="static/images/juno/juno_wordmark_calligra.svg" alt="Juno"></span><span class="title-rest">Taming Predictive Latents<br>for Vision-Language-Action Models</span></h1>
           <p class="authors"><a href="https://zhuyuchenno1.github.io/" target="_blank" rel="noreferrer">Yuchen Zhu</a><sup>1,2</sup><span>·</span><a href="https://chenyixu04.github.io/" target="_blank" rel="noreferrer">Chenyi Xu</a><sup>2,3</sup><span>·</span><a href="https://zhangyl4.github.io/" target="_blank" rel="noreferrer">Yulin Zhang</a><sup>4</sup><span>·</span><a href="https://scholar.google.com/citations?user=dt2v914AAAAJ&amp;hl=ja" target="_blank" rel="noreferrer">Gang Xu</a><sup>2</sup><span>·</span><a href="https://wentao.live/" target="_blank" rel="noreferrer">Wentao Zhu</a><sup>2</sup></p>
           <p class="affiliations"><sup>1</sup> University of Science and Technology of China &nbsp; <sup>2</sup> Eastern Institute of Technology, Ningbo<br><sup>3</sup> Hangzhou Dianzi University &nbsp; <sup>4</sup> ShanghaiTech University</p>
           <div class="hero-actions">
@@ -88,11 +88,15 @@
           <div><div class="section-kicker">The idea</div><h2>One JEPA, three jobs.</h2></div>
           <p>Juno follows a single predictive representation from learning the world to acting in it.</p>
         </div>
-        <div class="overview-figure figure-frame"><video class="overview-video" autoplay muted loop playsinline preload="metadata" aria-label="Juno overview video: feature pretraining, policy learning, and test-time adaptation"><source src="static/videos/juno/teaser.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
-        <div class="stage-grid">
-          <article class="stage-card stage-card-orange"><span class="stage-number">01</span><h3>Control-aligned<br>pretraining</h3><p>Match the JEPA to embodiment-specific motion, then make the global state respond to local interaction.</p><span class="stage-arrow">↘</span></article>
-          <article class="stage-card stage-card-blue"><span class="stage-number">02</span><h3>Decoupled<br>reasoning</h3><p>Fuse current-frame patches and distill future latent states in a branch that still drives actions.</p><span class="stage-arrow">↘</span></article>
-          <article class="stage-card stage-card-teal"><span class="stage-number">03</span><h3>Dynamics-first<br>adaptation</h3><p>Use every transition to adapt dynamics; trust verified executions when updating the policy.</p><span class="stage-arrow">↘</span></article>
+        <div class="overview-map">
+          <figure class="overview-root">
+            <div class="overview-figure figure-frame"><video class="overview-video" autoplay muted loop playsinline preload="metadata" poster="static/images/juno/teaser.png" aria-label="Juno overview video: feature pretraining, policy learning, and test-time adaptation"><source src="static/videos/juno/teaser.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+          </figure>
+          <div class="overview-branches">
+            <article class="overview-branch"><span class="branch-index">1. Pretraining</span><h3>Control-aligned pretraining</h3><p>Match the JEPA to embodiment-specific motion, then make the global state respond to local interaction.</p></article>
+            <article class="overview-branch"><span class="branch-index">2. Policy learning</span><h3>Decoupled predictive reasoning</h3><p>Fuse current-frame patches and distill future latent states in a branch that still drives actions.</p></article>
+            <article class="overview-branch"><span class="branch-index">3. Deployment</span><h3>Dynamics-first adaptation</h3><p>Use every transition to adapt dynamics; trust verified executions when updating the policy.</p></article>
+          </div>
         </div>
       </div>
     </section>
@@ -101,22 +105,28 @@
       <div class="container">
         <div class="section-heading compact-heading"><div><div class="section-kicker">Architecture</div><h2>Predict, align, act.</h2></div><p>The predictive branch is trained to be action-decodable, not merely visually predictive.</p></div>
         <div class="pipeline-card figure-frame"><img src="static/images/juno/pipeline.png" alt="Juno architecture pipeline from JEPA pretraining to predictive reasoning and Juno-TTT" loading="lazy"></div>
-        <div class="pipeline-notes"><div><span class="note-index">A</span><p><strong>Dynamic CLS.</strong> Motion-weighted patch changes supervise the compact state token.</p></div><div><span class="note-index">B</span><p><strong>Mixture-of-transformers branch.</strong> Future queries share causal attention while keeping separate transforms.</p></div><div><span class="note-index">C</span><p><strong>Failure-aware TTT.</strong> Failed actions still reveal consequences, so they remain useful for dynamics adaptation.</p></div></div>
+        <div class="pipeline-notes"><div><span class="note-index">A</span><p><strong>Dynamic CLS</strong> Motion-weighted patch changes supervise the compact state token.</p></div><div><span class="note-index">B</span><p><strong>MoT branch</strong> Future queries share causal attention while keeping separate transforms.</p></div><div><span class="note-index">C</span><p><strong>Failure-aware TTT</strong> Failed actions still reveal consequences, so they remain useful for dynamics adaptation.</p></div></div>
       </div>
     </section>
 
     <section class="results-section section-pad" id="results">
       <div class="container">
-        <div class="section-heading"><div><div class="section-kicker">Evidence</div><h2>Robustness shows up in the numbers.</h2></div><p>Reported paper results across simulation, real-robot transfer, and deployment adaptation.</p></div>
-        <div class="metric-grid">
-          <div class="metric-card"><span class="metric-value">68.5<span>%</span></span><span class="metric-label">SimplerEnv average success<br><b>Juno</b> · frozen policy</span></div>
-          <div class="metric-card metric-card-highlight"><span class="metric-value">72.7<span>%</span></span><span class="metric-label">SimplerEnv average success<br><b>Juno-TTT</b> · after adaptation</span></div>
-          <div class="metric-card"><span class="metric-value">59.6<span>%</span></span><span class="metric-label">RoboCasa-GR1 average<br><b>24 tabletop tasks</b></span></div>
-          <div class="metric-card"><span class="metric-value">70–75<span>%</span></span><span class="metric-label">Real-robot success under<br><b>background, height, object shifts</b></span></div>
+        <div class="section-heading"><div><h2>Experiments</h2></div></div>
+        <div class="results-summary simulation-results">
+          <h3 id="simulation-heading">Simulation on SimplerEnv</h3>
+          <figure class="simulation-figure" aria-labelledby="simulation-heading">
+            <a href="static/images/juno/simplerenv_table.png" target="_blank" rel="noreferrer" aria-label="Open the SimplerEnv results table at full resolution">
+              <img src="static/images/juno/simplerenv_table.png" width="2460" height="1302" loading="lazy" alt="Table 1 from the paper: WidowX success rates on four SimplerEnv tasks. Average success is 60.9% for Qwen3GR00T, 68.5% for Juno, and 72.7% for Juno-TTT; the table includes all compared methods and per-task results.">
+            </a>
+          </figure>
+        </div>
+        <div class="results-summary">
+          <h3>Real-robot generalization</h3>
+          <p>With the policy frozen, Juno achieves <strong>70–75%</strong> success under cumulative changes in background, height, and object identity. Each condition is evaluated over 20 trials.</p>
         </div>
         <div class="results-split">
           <div class="result-table-wrap">
-            <table class="result-table"><caption>Real robot · frozen policy · 20 trials per condition</caption><thead><tr><th>Condition</th><th>Qwen3GR00T</th><th>Juno</th></tr></thead><tbody><tr><td>In-domain</td><td>40%</td><td class="winner">100%</td></tr><tr><td>Background shift</td><td>0%</td><td class="winner">75%</td></tr><tr><td>+ Height shift</td><td>0%</td><td class="winner">70%</td></tr><tr><td>+ Object shift</td><td>0%</td><td class="winner">70%</td></tr></tbody></table>
+            <table class="result-table"><caption>Success rate by evaluation condition</caption><thead><tr><th>Condition</th><th>Qwen3GR00T</th><th>Juno</th></tr></thead><tbody><tr><td>In-domain</td><td>40%</td><td class="winner">100%</td></tr><tr><td>Background shift</td><td>0%</td><td class="winner">75%</td></tr><tr><td>+ Height shift</td><td>0%</td><td class="winner">70%</td></tr><tr><td>+ Object shift</td><td>0%</td><td class="winner">70%</td></tr></tbody></table>
           </div>
           <figure class="result-figure"><img src="static/images/juno/setting.png" alt="Real robot evaluation conditions: in-domain, background, height and object shifts" loading="lazy"><figcaption>Evaluation conditions on the AgileX Cobot Magic platform.</figcaption></figure>
         </div>
@@ -125,26 +135,27 @@
 
     <section class="videos-section section-pad" id="videos">
       <div class="container">
-        <div class="section-heading videos-heading"><div><div class="section-kicker">Real-robot rollouts</div><h2>See the policy meet the shift.</h2></div><p>Frozen-policy rollouts over one in-domain and three cumulative out-of-distribution conditions, accelerated to 1.5× and shown as looping GIFs.</p></div>
+        <div class="section-heading videos-heading"><div><h2>Real-robot rollouts</h2></div><p>Frozen-policy rollouts under one in-domain and three cumulative out-of-distribution conditions. Shown at 1.5× speed.</p></div>
         <div class="video-grid">
           <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_indomain.gif" alt="Juno in-domain rollout: put the red cube into the blue bowl"><span class="video-badge badge-success">Juno · 100%</span></div><div class="video-meta"><h3>In-domain</h3><p>&ldquo;Put the red cube into the blue bowl.&rdquo; Held-out cube positions, nominal appearance.</p></div></article>
           <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_background_shift.gif" alt="Juno rollout under background shift with a new tablecloth, cube color, and bowl"><span class="video-badge badge-success">Juno · 75%</span></div><div class="video-meta"><h3>+ Background shift</h3><p>&ldquo;Put the purple cube into the green bowl.&rdquo; New tablecloth, cube color, and bowl.</p></div></article>
           <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_height_shift.gif" alt="Juno rollout under height shift on a work plane raised by 10 cm"><span class="video-badge badge-success">Juno · 70%</span></div><div class="video-meta"><h3>+ Height shift</h3><p>&ldquo;Put the purple cube into the green bowl.&rdquo; Work plane additionally raised by 10&nbsp;cm.</p></div></article>
           <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_pt_success.gif" alt="Juno rollout under object shift: put the grape into the green bowl"><span class="video-badge badge-success">Juno · 70%</span></div><div class="video-meta"><h3>+ Object shift</h3><p>&ldquo;Put the grape into the green bowl.&rdquo; A grape replaces the cube; instruction updated.</p></div></article>
         </div>
-        <div class="ttt-header"><span class="section-kicker">Juno-TTT</span><h3>Adaptation recovers control under harder observations.</h3><p>World-model adaptation uses every transition; policy re-alignment uses verified executions only.</p></div>
-        <div class="video-grid">
-          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_ttt_noise_fail.gif" alt="Gaussian observation noise before Juno-TTT"><span class="video-badge badge-fail">Frozen · 40%</span></div><div class="video-meta"><h3>Gaussian observation noise</h3><p>Before Juno-TTT.</p></div></article>
-          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_ttt_noise_success.gif" alt="Gaussian observation noise after Juno-TTT adaptation"><span class="video-badge badge-success">Juno-TTT · 65%</span></div><div class="video-meta"><h3>Gaussian observation noise</h3><p>After dynamics adaptation and policy re-alignment.</p></div></article>
-          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_ttt_light_fail.gif" alt="Dynamic lighting before Juno-TTT"><span class="video-badge badge-fail">Frozen · 55%</span></div><div class="video-meta"><h3>Dynamic lighting</h3><p>Before Juno-TTT.</p></div></article>
-          <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_ttt_light_success.gif" alt="Dynamic lighting after Juno-TTT adaptation"><span class="video-badge badge-success">Juno-TTT · 70%</span></div><div class="video-meta"><h3>Dynamic lighting</h3><p>After adaptation to the deployment stream.</p></div></article>
+        <div class="section-heading adaptation-heading"><div><h2>Test-time adaptation</h2></div><p>World-model adaptation uses every transition; policy re-alignment uses verified executions only.</p></div>
+        <div class="adaptation-group">
+          <h3>Dynamic lighting</h3>
+          <div class="video-grid">
+            <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_ttt_light_fail.gif" alt="Dynamic lighting before Juno-TTT"><span class="video-badge badge-fail">Frozen · 55%</span></div><div class="video-meta"><h4>Before Juno-TTT</h4></div></article>
+            <article class="video-card"><div class="video-frame"><img src="static/videos/juno/juno_ttt_light_success.gif" alt="Dynamic lighting after Juno-TTT adaptation"><span class="video-badge badge-success">Juno-TTT · 70%</span></div><div class="video-meta"><h4>After Juno-TTT</h4></div></article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="citation-section section-pad" id="citation">
       <div class="container">
-        <div class="bibtex-card"><div class="bibtex-top"><span>BibTeX</span><button type="button" class="copy-button" data-copy-target="bibtex">Copy</button></div><pre id="bibtex"><code>@misc{zhu2026junotamingpredictivelatents,
+        <div class="bibtex-card"><div class="bibtex-top"><h2>BibTeX</h2><button type="button" class="copy-button" data-copy-target="bibtex">Copy</button></div><pre id="bibtex"><code>@misc{zhu2026junotamingpredictivelatents,
       title={Juno: Taming Predictive Latents for Vision-Language-Action Models},
       author={Yuchen Zhu and Chenyi Xu and Yulin Zhang and Gang Xu and Wentao Zhu},
       year={2026},

@@ -280,11 +280,11 @@ body {
 .stage-arrow { display: none; }
 .compact-heading { margin-bottom: 22px; }
 .pipeline-card { padding: 10px; }
-.pipeline-notes { gap: 24px; margin-top: 22px; }
-.pipeline-notes > div { grid-template-columns: 25px 1fr; gap: 9px; }
-.note-index { width: 24px; height: 24px; background: var(--ref-purple); }
-.pipeline-notes p { color: var(--ref-muted); font-size: 17px; line-height: 1.6; }
-.pipeline-notes strong { color: var(--ref-text); }
+.pipeline-notes { gap: 40px; margin-top: 32px; }
+.pipeline-notes > div { grid-template-columns: 28px minmax(0, 1fr); gap: 14px; }
+.note-index { width: 28px; height: 28px; background: #171717; color: #fff; font-family: "Inter", sans-serif; font-size: 14px; }
+.pipeline-notes p { margin: 0; color: #627381; font-size: 18px; line-height: 1.7; text-align: left; }
+.pipeline-notes strong { display: block; min-height: 1.3em; margin-bottom: 16px; color: #253544; font-family: "Inter", sans-serif; font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
 
 .metric-grid { gap: 18px; margin-bottom: 32px; }
 .metric-card { min-height: 142px; padding: 14px 8px; border: 0; border-top: 2px solid var(--ref-border); border-radius: 0; background: transparent; text-align: center; box-shadow: none; }
@@ -342,6 +342,7 @@ body {
   .stage-card:last-child { border-bottom: 0; }
   .stage-card p { max-width: 100%; }
   .pipeline-notes { grid-template-columns: 1fr; }
+  .pipeline-notes strong { font-size: 23px; }
   .metric-grid { grid-template-columns: repeat(2, 1fr); }
   .results-split, .citation-grid { grid-template-columns: 1fr; }
   .citation-grid h2 { text-align: center; }
@@ -378,3 +379,136 @@ main > section:first-child { margin-top: 0; }
 }
 
 .intro-video-section .narrow-container { width: min(960px, calc(100% - 32px)); margin-inline: auto; }
+
+/* A white research header with the original text colors. */
+.hero-section { background: #fff; padding-top: 56px; padding-bottom: 60px; }
+.hero-copy h1,
+.hero-copy .juno-word,
+.hero-copy .title-rest {
+  font-family: "Inter", "Noto Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+.hero-copy .title-rest { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.22; }
+.hero-copy .juno-wordmark {
+  display: block;
+  width: 2.4em;
+  height: auto;
+  font-size: 1em;
+}
+.hero-copy .juno-lockup {
+  display: flex;
+  width: max-content;
+  margin: 0 auto 8px;
+  gap: .14em;
+}
+.hero-copy .juno-title-logo {
+  width: 1.95em;
+  height: 1.95em;
+  margin-inline: -.27em;
+  flex-shrink: 0;
+}
+
+/* A shared model branches into three roles, with quiet editorial styling. */
+.overview-section > .container { width: min(1280px, calc(100% - 64px)); max-width: none; }
+.overview-map { display: grid; grid-template-columns: 1fr; gap: 52px; margin-top: 36px; }
+.overview-root { position: relative; min-width: 0; width: min(100%, 960px); margin: 0 auto; }
+.overview-root::after { content: ""; position: absolute; left: 50%; top: 100%; height: 52px; border-left: 1px solid #c9d3dc; }
+.overview-map .overview-figure { max-width: 100%; padding: 0; border: 1px solid #e3e8ec; border-radius: 8px; box-shadow: none; overflow: hidden; }
+.overview-map .overview-video { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 0; background: #fff; }
+.overview-root figcaption { margin-top: 20px; text-align: center; color: #253544; font-size: 20px; font-weight: 500; }
+.overview-root figcaption span { display: block; margin-top: 5px; color: #6c7a87; font-size: 14px; font-weight: 400; }
+.overview-branches { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 28%)); justify-content: space-between; }
+.overview-branches::before { content: ""; position: absolute; left: 14%; right: 14%; top: 0; border-top: 1px solid #c9d3dc; }
+.overview-branch { position: relative; padding: 34px 0 0; text-align: center; }
+.overview-branch::before { content: ""; position: absolute; top: 0; left: 50%; height: 20px; border-left: 1px solid #c9d3dc; }
+.overview-branch::after { content: ""; position: absolute; top: 18px; left: calc(50% - 2.5px); width: 6px; height: 6px; border-radius: 50%; background: #8095a6; }
+.branch-index { color: #253544; font-family: "Inter", sans-serif; font-size: 17px; font-weight: 600; letter-spacing: normal; }
+.overview-branch h3 { margin: 12px 0; color: #253544; font-family: "Inter", sans-serif; font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+.overview-branch p { margin: 0; color: #627381; font-size: 18px; line-height: 1.7; }
+@media (max-width: 850px) {
+  .overview-section > .container { width: calc(100% - 32px); }
+  .overview-map { grid-template-columns: 1fr; gap: 28px; }
+  .overview-root { width: min(100%, 560px); margin-inline: auto; }
+  .overview-root::after { display: none; }
+  .overview-branches { grid-template-columns: 1fr; grid-template-rows: repeat(3, 1fr); margin-left: 28px; }
+  .overview-branches::before { left: -24px; right: auto; top: 16.6667%; bottom: 16.6667%; border-top: 0; border-left: 1px solid #c9d3dc; }
+  .overview-branch::before { left: -24px; top: 50%; width: 14px; height: 0; border-left: 0; border-top: 1px solid #c9d3dc; }
+  .overview-branch::after { left: -13px; top: calc(50% - 3px); }
+  .overview-branch { padding: 20px 0; text-align: left; }
+  .overview-branch h3 { font-size: 23px; }
+}
+.hero-copy .authors { margin-top: 32px; margin-bottom: 18px; font-weight: 400; }
+
+/* Results use the same type scale as the method notes above. */
+.results-section .section-heading { margin-bottom: 32px; }
+.results-summary { margin: 0 0 28px; }
+.results-summary h3 { margin: 0 0 12px; color: #253544; font-family: "Inter", sans-serif; font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+.results-summary p { margin: 0; color: #627381; font-size: 18px; line-height: 1.7; }
+.results-summary strong { color: #253544; font-weight: 600; }
+.results-section .results-split { gap: 36px; align-items: start; }
+.results-section .result-table-wrap { border: 0; border-radius: 0; }
+.results-section .result-table { font-size: 18px; }
+.results-section .result-table caption { padding: 0 0 16px; font-size: 18px; font-weight: 600; color: #253544; }
+.results-section .result-table th,
+.results-section .result-table td { padding: 14px 10px; font-size: 18px; }
+.results-section .result-table th { border-top: 1px solid #8095a6; color: #253544; font-weight: 600; }
+.results-section .result-table tr:last-child td { border-bottom: 1px solid #8095a6; }
+.results-section .result-table th:first-child,
+.results-section .result-table td:first-child { padding-left: 0; }
+.results-section .result-table td.winner { color: #253544; font-weight: 600; }
+.results-section .result-table th:not(:first-child),
+.results-section .result-table td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.results-section .simulation-results { margin-bottom: 40px; }
+.results-section .simulation-results h3 { margin-bottom: 20px; }
+.simulation-figure { width: min(100%, 780px); margin: 0 auto; }
+.simulation-figure a { display: block; cursor: zoom-in; }
+.simulation-figure img { display: block; width: 100%; height: auto; }
+.simulation-figure a:focus-visible { outline: 2px solid #253544; outline-offset: 6px; }
+.results-section .result-figure { padding: 0; border: 0; border-radius: 0; }
+.results-section .result-figure img { border-radius: 0; }
+.results-section .result-figure figcaption { margin: 12px 0 0; color: #627381; font-size: 18px; line-height: 1.7; }
+@media (max-width: 760px) {
+  .results-summary h3 { font-size: 23px; }
+  .results-section .result-table th,
+  .results-section .result-table td { padding-inline: 6px; font-size: 16px; }
+}
+
+@media (max-width: 760px) {
+  .hero-section { padding-top: 40px; padding-bottom: 44px; }
+  .hero-copy .authors { margin-top: 26px; margin-bottom: 16px; }
+}
+
+/* Carry the restrained results treatment through the rollout gallery. */
+.videos-section { background: #fff; color: #253544; }
+.videos-section .section-heading { margin-bottom: 32px; }
+.videos-section .section-heading > p { max-width: none; color: #627381; font-size: 18px; line-height: 1.7; text-align: left; }
+.videos-section .video-grid { gap: 40px 36px; margin-top: 0; align-items: start; }
+.videos-section .video-card { min-width: 0; border: 0; border-radius: 0; background: transparent; }
+.videos-section .video-frame,
+.videos-section .video-frame img { border-radius: 0; box-shadow: none; }
+.videos-section .video-meta { padding: 16px 0 0; text-align: left; }
+.videos-section .video-meta h3,
+.videos-section .adaptation-group > h3,
+.citation-section .bibtex-top h2 { margin: 0; color: #253544; font-family: "Inter", sans-serif; font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+.videos-section .video-meta p { margin: 10px 0 0; color: #627381; font-size: 18px; line-height: 1.7; }
+.videos-section .adaptation-heading { margin-top: 72px; }
+.videos-section .adaptation-heading > p { font-size: 22px; line-height: 1.65; }
+.videos-section .adaptation-group > h3 { margin-bottom: 20px; }
+.videos-section .video-meta h4 { margin: 0; color: #253544; font-family: "Inter", sans-serif; font-size: 18px; font-weight: 600; line-height: 1.7; letter-spacing: normal; }
+.citation-section .bibtex-card { border: 0; border-radius: 0; background: #fff; }
+.citation-section .bibtex-top { padding: 0 0 20px; letter-spacing: normal; text-transform: none; }
+.citation-section .copy-button { padding: 7px 14px; border: 1px solid #c9d3dc; border-radius: 4px; color: #253544; font-family: "Inter", sans-serif; font-size: 16px; font-weight: 500; letter-spacing: normal; }
+.citation-section .copy-button:hover { color: #253544; border-color: #8095a6; background: #f6f8fa; }
+.citation-section .bibtex-card pre { padding: 22px 24px; border-top: 1px solid #c9d3dc; background: #f7f8fa; color: #253544; font-size: 15px; line-height: 1.7; }
+.site-footer { font-size: 16px; }
+.footer-inner strong { color: #253544; font-family: inherit; font-size: inherit; font-style: normal; }
+@media (max-width: 760px) {
+  .videos-section .video-meta h3,
+  .videos-section .adaptation-group > h3,
+  .citation-section .bibtex-top h2 { font-size: 23px; }
+  .videos-section .video-grid { gap: 32px; }
+  .videos-section .adaptation-heading { margin-top: 56px; }
+  .videos-section .adaptation-heading > p { font-size: 20px; }
+  .citation-section .bibtex-card pre { padding: 18px 16px; font-size: 14px; }
+}
